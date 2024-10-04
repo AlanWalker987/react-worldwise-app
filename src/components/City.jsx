@@ -18,9 +18,12 @@ function City() {
 
   const { currentCity, fetchCity, isLoading } = useCities();
 
-  useEffect(function () {
-    fetchCity(id);
-  }, []);
+  useEffect(
+    function () {
+      fetchCity(id);
+    },
+    [id, fetchCity]
+  );
 
   const { cityName, date, notes } = currentCity;
   if (isLoading) return <Spinner />;

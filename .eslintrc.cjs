@@ -13,5 +13,14 @@ module.exports = {
   plugins: ["react-refresh"],
   rules: {
     "react/prop-types": "off",
+    "no-unused-vars": [
+      "warn",
+      {
+        vars: "all",
+        args: "after-used",
+        ignoreRestSiblings: true,
+        varsIgnorePattern: "^set",
+      },
+    ],
   },
 };
